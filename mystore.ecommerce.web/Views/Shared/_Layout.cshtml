@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/lib/fortawesome/fontawesome-free/css/all.css" rel="stylesheet" />
+    <link href="~/css/site.css"  rel="stylesheet"/>
+    @RenderSection("head",false)
+</head>
+<body>
+   
+        @RenderBody()
+
+    <footer class="text-center">Copyright @DateTime.Today.Year My Store</footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js" ></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" ></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

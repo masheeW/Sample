@@ -1,0 +1,3 @@
+
+ng build --vendor-chunk --output-hashing none
+

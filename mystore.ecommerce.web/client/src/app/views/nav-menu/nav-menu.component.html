@@ -1,0 +1,37 @@
+﻿
+<nav class="navbar navbar-dark bg-dark navbar-expand-md bg-grey">
+
+    <h1 class="navbar-brand"><i class="fas fa-store store-logo"></i>My Store</h1>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#theMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="theMenu" class="navbar-collapse collapse">
+        <ul class="navbar-nav" id='menu'>
+            <li class="nav-item">
+                <a routerLink="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item" *ngIf="(loginStatus)">
+                <a routerLink="order" class="nav-link">My Orders</a>
+            </li>
+            <li class="nav-item" *ngIf="(loginStatus)">
+                <a (click)="logout()" class="nav-link">Logout</a>
+            </li>
+            <li class="nav-item" *ngIf="(!loginStatus)">
+                <a routerLink="login" class="nav-link">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="(!loginStatus)">
+                <a routerLink="register" class="nav-link">Register</a>
+            </li>
+            <li>
+                <a class="nav-item cat" href='#'>Menu</a>
+                <ul class="menus">
+                    <li *ngFor="let p of this.store.productCategories"><a href='#' title='{{ p.categoryName }}' (click)="this.searchbyCat(p.id, searchtext.value)">{{ p.categoryName }}</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div>
+            <input type="text" name="searchtext" #searchtext />
+            <input type="button" value="Search" (click)="this.search(searchtext.value)" />
+        </div>
+    </div>
+</nav>
